@@ -1,0 +1,29 @@
+import { MapPin, Mail, Phone, UserRound, GitBranch } from "lucide-react";
+import SectionTitle from "./SectionTitle";
+import Reveal from "./Reveal";
+
+const info = [
+  [UserRound, "Name", "Jolo A. Cañete"], [MapPin, "Location", "Iligan City"], [Mail, "Email", "canetejolo0@gmail.com"],
+  [Phone, "Phone", "09203513491"], [GitBranch, "GitHub", "github.com/Licoresh"],
+] as const;
+
+export default function About() {
+  return (
+    <section id="about" className="section-pad border-t border-white/[.055]">
+      <div className="container-shell">
+        <Reveal><SectionTitle eyebrow="Get to know me" title="About Me" /></Reveal>
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr]">
+          <Reveal className="glass rounded-[28px] p-7 sm:p-9">
+            <div className="space-y-5">
+              <p className="muted text-base leading-8 sm:text-lg">I’m Jolo A. Cañete, a developer from Iligan City who enjoys turning ideas into practical and engaging digital products. I build responsive websites, management systems, interactive prototypes, and Roblox experiences with a focus on clean design and straightforward user journeys.</p>
+              <p className="muted text-base leading-8 sm:text-lg">I enjoy learning new technologies, solving problems through code, and improving a project one detail at a time. Whether I’m working on a community-focused platform or experimenting with game mechanics, my goal is to create work that feels useful, accessible, and enjoyable to use.</p>
+            </div>
+          </Reveal>
+          <Reveal className="grid gap-3 sm:grid-cols-2">
+            {info.map(([Icon, label, value], index) => <div key={label} className={`glass rounded-2xl p-5 ${index === info.length - 1 ? "sm:col-span-2" : ""}`}><Icon className="mb-4 text-[var(--accent)]" size={22} /><p className="text-xs font-bold uppercase tracking-[.16em] text-white/40">{label}</p><p className="mt-1 font-bold">{value}</p></div>)}
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
