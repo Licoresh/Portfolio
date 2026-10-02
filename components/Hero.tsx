@@ -1,13 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { ArrowRight, GitBranch, Users, Mail, Code2, Braces, Atom, Coffee, PenTool, Gamepad2 } from "lucide-react";
 import { motion } from "motion/react";
 import { socials } from "@/data/socials";
 import useSafeReducedMotion from "./useSafeReducedMotion";
 
-const roles = ["Full-Stack Developer", "Web App Developer", "Roblox Game Developer"];
 const socialIcons = { GitHub: GitBranch, Facebook: Users, Email: Mail } as const;
 const tech = [
   { label: "JS", Icon: Braces, pos: "left-[4%] top-[14%]" },
@@ -20,12 +18,6 @@ const tech = [
 
 export default function Hero() {
   const reduce = useSafeReducedMotion();
-  const [role, setRole] = useState(0);
-  useEffect(() => {
-    if (reduce) return;
-    const id = window.setInterval(() => setRole((v) => (v + 1) % roles.length), 2600);
-    return () => window.clearInterval(id);
-  }, [reduce]);
 
   return (
     <section id="home" className="relative min-h-screen overflow-hidden pt-[76px]">
@@ -35,7 +27,7 @@ export default function Hero() {
           <p className="mb-5 text-sm font-bold uppercase tracking-[.22em] text-white/55">Hello, I am</p>
           <h1 className="max-w-4xl text-5xl font-black leading-[.96] tracking-[-.055em] sm:text-6xl md:text-7xl xl:text-8xl">Jolo A. Cañete</h1>
           <div className="mt-5 min-h-10 text-xl font-bold text-white/75 sm:text-2xl">
-            A <span className="accent-text inline-block min-w-[150px]">{roles[role]}</span> based in Iligan City
+            An <span className="accent-text inline-block">Aspiring Full-Stack Developer</span> based in Iligan City
           </div>
           <p className="muted mt-6 max-w-2xl text-base leading-8 sm:text-lg">I build practical web applications, management systems, high-fidelity prototypes, and Roblox experiences that turn ideas into useful and engaging digital products.</p>
           <div className="mt-9 flex flex-wrap gap-3">

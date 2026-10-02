@@ -1,4 +1,4 @@
-import { MapPin, Mail, Phone, UserRound, GitBranch } from "lucide-react";
+import { MapPin, Mail, Phone, UserRound, GitBranch, GraduationCap } from "lucide-react";
 import SectionTitle from "./SectionTitle";
 import Reveal from "./Reveal";
 
@@ -15,7 +15,14 @@ export default function About() {
         <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr]">
           <Reveal className="glass rounded-[28px] p-7 sm:p-9">
             <div className="space-y-5">
-              <p className="muted text-base leading-8 sm:text-lg">I’m Jolo A. Cañete, a developer from Iligan City who enjoys turning ideas into practical and engaging digital products. I build responsive websites, management systems, interactive prototypes, and Roblox experiences with a focus on clean design and straightforward user journeys.</p>
+              <div className="rounded-2xl border border-[var(--accent)]/20 bg-[var(--accent)]/[.06] p-5 sm:p-6">
+                <div className="mb-4 flex items-center gap-3 text-[var(--accent)]">
+                  <div className="grid size-10 place-items-center rounded-xl bg-[var(--accent)]/12"><GraduationCap size={21} /></div>
+                  <p className="text-xs font-black uppercase tracking-[.18em]">Education</p>
+                </div>
+                <p className="text-lg font-bold leading-8 text-white sm:text-xl">I am a third-year Information Systems student at <span className="accent-text">Mindanao State University – Iligan Institute of Technology.</span></p>
+              </div>
+              <p className="muted text-base leading-8 sm:text-lg">Based in Iligan City, I enjoy turning ideas into practical and engaging digital products. I build responsive websites, management systems, interactive prototypes, and Roblox experiences with a focus on clean design and straightforward user journeys.</p>
               <p className="muted text-base leading-8 sm:text-lg">I enjoy learning new technologies, solving problems through code, and improving a project one detail at a time. Whether I’m working on a community-focused platform or experimenting with game mechanics, my goal is to create work that feels useful, accessible, and enjoyable to use.</p>
             </div>
           </Reveal>
